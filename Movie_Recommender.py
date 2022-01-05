@@ -49,7 +49,15 @@ def get_movie_rating(diction):
             return rating
     return 0
         
-def get_sorted_recommendations(lst):
+def get_sorted_recommendations():
+
+    num_movies = 5 #int(input('How many movies would you like to enter? '))
+    lst = []
+    for i in range(num_movies):
+      movie = (input('Enter a movie '))
+      lst.append(movie)
+      print(movie)
+  
     movies = get_related_titles(lst)
     
     scores = []
@@ -60,4 +68,5 @@ def get_sorted_recommendations(lst):
         titles.append(movie)
      
     return [movies for (ratings,movies) in sorted(list(zip(scores,titles)),reverse = True)]
-    
+
+get_sorted_recommendations()
