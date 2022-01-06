@@ -10,10 +10,12 @@ def get_movies_from_tastedive(movie):
     resp = requests.get(baseurl, param_d)
     
     return resp.json()
+    
 
 def extract_movie_titles(diction):
     titles = [title['Name'] for title in diction['Similar']['Results']]
     return titles
+
 
 def get_related_titles(lst):
     new_lst = []
@@ -29,6 +31,7 @@ def get_related_titles(lst):
            
     return new_lst
 
+
 def get_movie_data(movie):
     baseurl = 'http://www.omdbapi.com/'
     parama_d = {}
@@ -37,6 +40,7 @@ def get_movie_data(movie):
     resp = requests.get(baseurl, parama_d)
     
     return resp.json()
+
 
 def get_movie_rating(diction):
     
@@ -49,6 +53,7 @@ def get_movie_rating(diction):
             return rating
     return 0
         
+
 def get_sorted_recommendations():
 
     num_movies = 5 #int(input('How many movies would you like to enter? '))
@@ -68,5 +73,6 @@ def get_sorted_recommendations():
         titles.append(movie)
      
     return [movies for (ratings,movies) in sorted(list(zip(scores,titles)),reverse = True)]
+
 
 get_sorted_recommendations()
