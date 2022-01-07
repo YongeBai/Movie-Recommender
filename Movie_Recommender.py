@@ -75,4 +75,9 @@ def get_sorted_recommendations():
     return [movies for (ratings,movies) in sorted(list(zip(scores,titles)),reverse = True)]
 
 
-get_sorted_recommendations()
+def main():
+    get_sorted_recommendations()
+
+
+if __name__ == '__main__':
+    main()
