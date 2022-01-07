@@ -56,10 +56,10 @@ def get_movie_rating(diction):
 
 def get_sorted_recommendations():
 
-    num_movies = 5 #int(input('How many movies would you like to enter? '))
+    num_movies = int(input('How many movies would you like to enter? '))
     lst = []
     for i in range(num_movies):
-      movie = (input('Enter a movie '))
+      movie = (input('Enter a movie: '))
       lst.append(movie)
       print(movie)
   
